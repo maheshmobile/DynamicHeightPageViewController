@@ -8,7 +8,7 @@
 
 import UIKit
 
-var hight = UIScreen.main.bounds.height - 140
+var hight = UIScreen.main.bounds.height
 
 class Example3ViewController: UIViewController {
 	
@@ -191,9 +191,7 @@ extension BottomPageViewController: UIPageViewControllerDataSource {
 class BasePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
     @IBOutlet weak var tableView: UITableView!
-    
-    let topPageHeight: CGFloat = 140
-   
+       
     override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -219,10 +217,10 @@ class BasePageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return hight+topPageHeight
+        return hight
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return hight+topPageHeight
+        return hight
     }
 }
